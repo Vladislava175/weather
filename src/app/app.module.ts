@@ -11,7 +11,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {MatCardModule} from "@angular/material/card";
 import {MatTabsModule} from "@angular/material/tabs";
 import {MatInputModule} from "@angular/material/input";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {locationReducer} from "../share/location-reducer";
 import {StoreModule} from "@ngrx/store";
 import {MatToolbarModule} from "@angular/material/toolbar";
@@ -19,6 +19,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {RouterModule, Routes} from "@angular/router";
 import {TopBarComponent} from "../components/top-bar/top-bar.component";
+
 
 const routes: Routes = [
     {path: 'current-weather', component: CurrentWeatherComponent},
@@ -48,7 +49,8 @@ const routes: Routes = [
         MatCardModule,
         HttpClientModule,
         MatDividerModule,
-        MatListModule
+        MatListModule,
+        ReactiveFormsModule
     ],
     providers: [
         WeatherService

@@ -23,7 +23,7 @@ export class CurrentWeatherComponent implements OnInit {
         this.loc$.subscribe(loc => {
             this.loc = loc;
             this.searchWeather(loc);
-        })
+        });
     }
 
     ngOnInit() {
@@ -34,6 +34,7 @@ export class CurrentWeatherComponent implements OnInit {
         this.currentWeather = {};
         this.weatherService.getCurrentWeather(loc)
             .subscribe(res => {
+                debugger
                 this.currentWeather = res;
                 this.list.push(this.currentWeather);
             }, err => {
@@ -53,5 +54,10 @@ export class CurrentWeatherComponent implements OnInit {
 
     getIcon(iconName) {
         return `http://openweathermap.org/img/w/${iconName}.png`
+    }
+
+    cleatTable() {
+        this.list = [];
+        this.currentWeather = {};
     }
 }
