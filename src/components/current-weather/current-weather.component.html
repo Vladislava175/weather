@@ -1,0 +1,34 @@
+<h1 class="center" *ngIf='resultFound()'>Current weather for {{currentWeather.name}}</h1>
+<table>
+    <tbody>
+    <tr>
+        <td>
+            <h3>Name</h3>
+        </td>
+
+        <td>
+            <h3>Current Temperature:</h3>
+        </td>
+
+        <td>
+            <h3>Current Temperature:</h3>
+        </td>
+
+    </tr>
+    <tr *ngFor="let weather of list">
+        <td>
+            <h3>{{weather.name}}</h3>
+        </td>
+        <td>
+            <h3>{{weather.main?.temp - 273.15 | number:'1.0-0'}}<sup>o</sup>C</h3>
+        </td>
+        <td>
+            <h3>{{weather.weather[0].description}}</h3>
+            <img [src]="getIcon(weather.weather[0].icon)" />
+        </td>
+    </tr>
+    </tbody>
+</table>
+<div *ngIf='!resultFound()'>
+    <h1 class="center">{{msg || 'Failed to get weather.'}}</h1>
+</div>

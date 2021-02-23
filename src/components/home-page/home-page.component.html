@@ -1,0 +1,9 @@
+<app-top-bar></app-top-bar>
+<div id='container'>
+    <h1>Enter City to find weather info.</h1>
+    <mat-tab-group *ngIf='loc'>
+        <mat-tab label="Current Weather">
+            <app-current-weather></app-current-weather>
+        </mat-tab>
+    </mat-tab-group>
+</div>
